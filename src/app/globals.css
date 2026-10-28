@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #120d09;
+  --bark: #2a1d14;
+  --gold: #e2b15c;
+  --gold-deep: #a97832;
+  --ember: #c65a32;
+  --parchment: #f6ecd8;
+  --parchment-deep: #ead7b8;
+  --wine: #7d3b32;
+  --moss: #355646;
+  --line: rgba(226, 177, 92, 0.35);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 480px at 80% -10%, rgba(226, 177, 92, 0.16), transparent 55%),
+    radial-gradient(700px 500px at 10% 110%, rgba(198, 90, 50, 0.12), transparent 50%),
+    linear-gradient(180deg, #2c2118 0%, #140f0c 38%, #0c0907 100%);
+  color: #f6ecd8;
+  font-family: var(--font-ui), "Heebo", sans-serif;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+.desk-grid {
+  background-image:
+    linear-gradient(rgba(226, 177, 92, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 177, 92, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.gold-rule {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.daf-frame {
+  background:
+    linear-gradient(180deg, rgba(255, 248, 236, 0.08), transparent 18%),
+    #1a120d;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(226, 177, 92, 0.28);
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 6px;
+  border: 1.5px solid var(--bubble-line);
+  background: var(--bubble-fill);
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.bubble-gemara {
+  --bubble-line: rgba(214, 142, 58, 0.78);
+  --bubble-fill: rgba(226, 177, 92, 0.17);
+  --bubble-strong: rgba(226, 177, 92, 0.38);
+}
+
+.bubble-rashi {
+  --bubble-line: rgba(72, 148, 214, 0.75);
+  --bubble-fill: rgba(72, 148, 214, 0.16);
+  --bubble-strong: rgba(72, 148, 214, 0.36);
+}
+
+.bubble-tosafot {
+  --bubble-line: rgba(84, 176, 118, 0.75);
+  --bubble-fill: rgba(84, 176, 118, 0.16);
+  --bubble-strong: rgba(84, 176, 118, 0.36);
+}
+
+.bubble:hover,
+.bubble.is-hot {
+  background: var(--bubble-strong);
+}
+
+.bubble.is-selected {
+  background: var(--bubble-strong);
+  box-shadow: 0 0 0 2.5px rgba(255, 244, 222, 0.5);
+}
+
+.bubble.is-soft {
+  border-style: dashed;
+}
+
+.panel-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #c4a36a transparent;
+}
+
+.commentary-body strong {
+  color: var(--wine);
+  font-weight: 700;
+}
+
+.commentary-body em {
+  font-style: italic;
+}
+
+.picker-card {
+  background: rgba(20, 13, 9, 0.92);
+  border: 1px solid rgba(226, 177, 92, 0.28);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.chip {
+  border: 1px solid rgba(226, 177, 92, 0.28);
+  background: rgba(255, 244, 224, 0.04);
+}
+
+.chip.is-on {
+  background: #e2b15c;
+  color: #2a1a0c;
+  border-color: #e2b15c;
+}
